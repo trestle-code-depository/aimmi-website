@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <style>
+    body { margin:0; background:#ececec; color:#222; font-family:system-ui,-apple-system,sans-serif; }
+    a { color:#3b6ea5; } a:hover { color:#2a5580; }
+  </style>
+</helmet>
+<div style="padding:32px; display:flex; flex-direction:column; gap:20px;">
+  <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+    <a href="index.dc.html" style="font-size:13px;">← Index</a>
+    <h1 style="margin:0; font-size:22px; font-weight:600;">Assessment — Do you need an OIRC?</h1>
+    <code style="font-size:13px; color:#777;">/danh-gia/oirc</code>
+    <span style="font-size:12px; background:#3b6ea5; color:#fff; padding:2px 8px;">⚡ clickable — canned results, no real scoring</span>
+  </div>
+  <div style="display:flex; gap:32px; align-items:flex-start;">
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:12px; color:#777;">375px — interactive</div>
+      <div style="width:375px; background:#fafafa; border:1px solid #aaa; box-shadow:0 2px 8px rgba(0,0,0,.08); display:flex; flex-direction:column; min-height:640px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #c9c9c9; background:#fff;">
+          <div style="font-size:16px;">☰</div><div style="font-weight:700; letter-spacing:1px;">AIMMI</div><div style="font-size:12px; color:#777;"><span style="font-weight:700; color:#222;">VI</span> / EN</div>
+        </div>
+
+        <sc-if value="{{ showIntro }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:24px 20px; display:flex; flex-direction:column; gap:16px;">
+            <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777;">Free assessment · 6 questions · ~2 minutes</div>
+            <div style="font-size:24px; font-weight:650; line-height:1.25;">Do you need an OIRC?</div>
+            <div style="font-size:14px; color:#444; line-height:1.6;">Outbound investment registration: whether your plan requires it, what the timeline looks like, and where the sequencing risk sits.</div>
+            <div style="font-size:12px; color:#777; line-height:1.5;">Answers stay in your browser and are never sent to a server. Nothing is saved after you finish.</div>
+            <button onClick="{{ start }}" style="padding:12px; font-size:15px; background:#3b6ea5; color:#fff; border:1px solid #3b6ea5; cursor:pointer;">Start</button>
+            <div style="font-size:11px; color:#999;">Last verified: [DATE] · Readiness is what AIMMI assesses; eligibility is determined by a licensed representative.</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showQuestion }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:20px; display:flex; flex-direction:column; gap:16px; flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <button onClick="{{ goBack }}" style="background:none; border:none; color:#3b6ea5; font-size:13px; cursor:pointer; padding:0;">← Back</button>
+              <div style="font-size:12px; color:#777;">Question {{ qNum }} of {{ qTotal }}</div>
+            </div>
+            <div style="height:4px; background:#ddd;"><div style="height:4px; background:#3b6ea5; width: {{ progressPct }};"></div></div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">{{ qText }}</div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <sc-for list="{{ opts }}" as="opt" hint-placeholder-count="4">
+                <button onClick="{{ opt.pick }}" style="padding:12px 14px; font-size:14px; text-align:left; background:#fff; border:1px solid #3b6ea5; color:#222; cursor:pointer;" style-hover="background:#eef3f8;">{{ opt.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showExit }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:24px 20px; display:flex; flex-direction:column; gap:14px;">
+            <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777;">Early answer</div>
+            <div style="font-size:20px; font-weight:650; line-height:1.3;">{{ exitTitle }}</div>
+            <div style="font-size:14px; color:#444; line-height:1.6;">{{ exitBody }}</div>
+            <div style="border:1px solid #c9c9c9; background:#fff; padding:14px; font-size:13px; color:#444; line-height:1.6;"><strong>An honest alternative.</strong> {{ exitAlt }}</div>
+            <button onClick="{{ restart }}" style="padding:10px; font-size:14px; background:#fff; color:#3b6ea5; border:1px solid #3b6ea5; cursor:pointer;">Start over</button>
+            <div style="font-size:11px; color:#999;">Last verified: [DATE] · Readiness is what AIMMI assesses; eligibility is determined by a licensed representative.</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showResult }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:20px; display:flex; flex-direction:column; gap:14px;">
+            <div style="border:1px dashed #999; background:#f6f4ec; padding:8px 10px; font-size:11px; color:#555;">Wireframe control — view result state:
+              <button onClick="{{ setNotReady }}" style="font-size:11px; cursor:pointer;">not ready</button>
+              <button onClick="{{ setReady }}" style="font-size:11px; cursor:pointer;">ready</button>
+            </div>
+
+            <sc-if value="{{ isNotReady }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex; flex-direction:column; gap:14px;">
+                <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777;">Your result</div>
+                <div style="font-size:21px; font-weight:650; line-height:1.3;">{{ nrHeadline }}</div>
+                <sc-for list="{{ nrPoints }}" as="p" hint-placeholder-count="3">
+                  <div style="border-left:3px solid #999; padding:2px 0 2px 12px; font-size:14px; color:#444; line-height:1.55;"><strong>{{ p.k }}</strong> — {{ p.v }}</div>
+                </sc-for>
+                <div style="border:1px solid #c9c9c9; background:#fff; padding:14px; font-size:13px; color:#444; line-height:1.6;"><strong>An honest alternative.</strong> {{ nrAlt }}</div>
+                <div style="font-size:13px; color:#555; line-height:1.5;">Want this explanation by email, to read later? Optional — the result above is complete.</div>
+                <div style="display:flex; gap:8px;"><input placeholder="Email (optional)" style="flex:1; padding:9px; border:1px solid #c9c9c9;"><button style="padding:9px 14px; background:#fff; color:#3b6ea5; border:1px solid #3b6ea5; cursor:pointer;">Send</button></div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isReady }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex; flex-direction:column; gap:14px;">
+                <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777;">Your result</div>
+                <div style="font-size:21px; font-weight:650; line-height:1.3;">{{ rHeadline }}</div>
+                <sc-for list="{{ rDims }}" as="d" hint-placeholder-count="4">
+                  <div style="display:flex; flex-direction:column; gap:3px;">
+                    <div style="display:flex; justify-content:space-between; font-size:12px; color:#555;"><span>{{ d.name }}</span><span>{{ d.state }}</span></div>
+                    <div style="height:8px; background:#ddd;"><div style="height:8px; background:#3b6ea5; width: {{ d.pct }};"></div></div>
+                  </div>
+                </sc-for>
+                <div style="border:2px solid #3b6ea5; background:#fff; padding:14px; display:flex; flex-direction:column; gap:8px;">
+                  <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#777;">Closes the gap</div>
+                  <div style="font-weight:600; font-size:15px;">{{ rService }}</div>
+                  <div style="font-size:13px; color:#444; line-height:1.5;">{{ rServiceBody }}</div>
+                  <div style="font-size:14px; font-weight:600;">Fee range: [FEE RANGE]</div>
+                  <button style="padding:10px; font-size:14px; background:#3b6ea5; color:#fff; border:1px solid #3b6ea5; cursor:pointer;">Talk to AIMMI</button>
+                </div>
+                <div style="font-size:12px; color:#777; line-height:1.5;">The itemised remediation plan — each gap, its cost, its timeline — is the paid assessment.</div>
+                <div style="border-top:1px solid #c9c9c9; padding-top:12px; display:flex; flex-direction:column; gap:8px;">
+                  <div style="font-size:13px; font-weight:600;">Download this result as PDF</div>
+                  <input placeholder="Email (required for PDF only)" style="padding:9px; border:1px solid #c9c9c9;">
+                  <label style="font-size:12px; color:#555; display:flex; gap:8px;"><input type="checkbox"> Also send me occasional updates (optional)</label>
+                  <button style="padding:9px; background:#fff; color:#3b6ea5; border:1px solid #3b6ea5; cursor:pointer;">Email me the PDF</button>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="font-size:11px; color:#999; line-height:1.5;">Last verified: [DATE] · [STANDARD DISCLAIMER] · Readiness is what AIMMI assesses; eligibility is determined by a licensed representative.</div>
+            <button onClick="{{ restart }}" style="padding:8px; font-size:13px; background:none; color:#3b6ea5; border:none; cursor:pointer;">Start over</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:16px; max-width:560px;">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="font-size:12px; color:#777;">1280px — same flow, question card centred (static)</div>
+        <div style="width:560px; height:320px; background:#fafafa; border:1px solid #aaa; display:flex; align-items:center; justify-content:center;">
+          <div style="width:60%; border:1px solid #c9c9c9; background:#fff; padding:18px; display:flex; flex-direction:column; gap:10px;">
+            <div style="font-size:10px; color:#777;">Question 3 of 6 ———○——————</div>
+            <div style="font-size:14px; font-weight:600;">[Question text]</div>
+            <div style="height:22px; border:1px solid #3b6ea5;"></div>
+            <div style="height:22px; border:1px solid #3b6ea5;"></div>
+            <div style="height:22px; border:1px solid #3b6ea5;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="border:1px dashed #999; background:#f6f4ec; padding:12px 14px; font-size:12px; color:#555; line-height:1.6; display:flex; flex-direction:column; gap:8px;">
+        <div><strong style="color:#333;">⚑ DECISION</strong> — This page carries the live CAD/VND and USD/VND threshold conversion — the exchange rate decides which side of the line a client falls on, and nobody else in this market publishes it. Rate source and date always shown. Result states here are “required” / “depends on the rate”, mapped onto the shared result shell.</div>
+        <div><strong style="color:#333;">⚑ DECISION</strong> — Desktop reuses the mobile flow with a centred card. One flow to test, one to maintain.</div>
+        <div><strong style="color:#333;">⚑ DECISION</strong> — The not-ready result has no email gate; the emailed-explanation offer sits last. The ready result shows service + fee range on the same screen, with the itemised plan held back as the paid tier.</div>
+        <div>Result copy here is canned sample copy for structure review — scoring and final wording belong to the build phase. Banned-language rule applies: no qualify / eligible / guaranteed / success rate / percentage likelihood.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { step: 'intro', q: 0, mode: 'notready' };
+  cfg = /*CFG*/{
+  "questions": [
+    {
+      "q": "How much do you plan to invest abroad?",
+      "opts": [
+        "Under 3 tỷ VND",
+        "3–10 tỷ VND",
+        "10–25 tỷ VND",
+        "Over 25 tỷ VND"
+      ]
+    },
+    {
+      "q": "Personal or corporate funds?",
+      "opts": [
+        "Personal",
+        "Corporate",
+        "Mixed"
+      ]
+    },
+    {
+      "q": "The source of those funds?",
+      "opts": [
+        "Business income",
+        "Property sale",
+        "Savings and other"
+      ]
+    },
+    {
+      "q": "Will a Vietnamese company hold the foreign entity?",
+      "opts": [
+        "Yes",
+        "No",
+        "Not decided"
+      ]
+    },
+    {
+      "q": "Your timeline to transfer?",
+      "opts": [
+        "Under 6 months",
+        "6–12 months",
+        "Over a year"
+      ]
+    },
+    {
+      "q": "Prior outbound transfers?",
+      "opts": [
+        "None",
+        "Yes, through registered channels",
+        "Yes, informally"
+      ]
+    }
+  ],
+  "gate": null,
+  "nrHeadline": "At this investment level, an OIRC is unavoidable — not optional.",
+  "nrPoints": [
+    {
+      "k": "Why",
+      "v": "Your planned amount converts to [CAD/USD AMOUNT — LIVE RATE, SOURCE + DATE SHOWN] — above the registration line at today’s rate. Clients routinely discover this after committing; you now know before."
+    },
+    {
+      "k": "Timeline",
+      "v": "OIRC preparation and SBV capital account registration realistically take [TIMELINE — VERIFY]. Start before you sign anything abroad."
+    },
+    {
+      "k": "Sequencing risk",
+      "v": "Funds that arrive abroad before registration completes do not arrive as acceptable personal equity. Order of operations is the whole game."
+    }
+  ],
+  "nrAlt": "Prior informal transfers do not disqualify a future registered one — but they must be dealt with in the file, not hidden from it.",
+  "rHeadline": "Your plan may sit below the registration line — the exchange rate decides.",
+  "rDims": [
+    {
+      "name": "Amount vs threshold",
+      "state": "Near the line",
+      "pct": "60%"
+    },
+    {
+      "name": "Source documentation",
+      "state": "Ready",
+      "pct": "80%"
+    },
+    {
+      "name": "Structure decided",
+      "state": "Open",
+      "pct": "40%"
+    },
+    {
+      "name": "Transfer history",
+      "state": "Clean",
+      "pct": "90%"
+    }
+  ],
+  "rService": "Outbound investment compliance (paid)",
+  "rServiceBody": "OIRC preparation, SBV capital account registration, and transfer sequencing so funds arrive as acceptable personal equity — with the threshold conversion tracked so a rate move does not surprise you."
+}/*ENDCFG*/;
+  renderVals() {
+    const s = this.state, c = this.cfg, qs = c.questions;
+    const cur = qs[s.q] || qs[0];
+    const pick = (i) => () => {
+      if (c.gate && s.q === c.gate.qIndex && i === c.gate.optIndex) { this.setState({ step: 'exit' }); return; }
+      if (s.q + 1 >= qs.length) this.setState({ step: 'result' });
+      else this.setState({ q: s.q + 1 });
+    };
+    return {
+      showIntro: s.step === 'intro', showQuestion: s.step === 'q', showExit: s.step === 'exit', showResult: s.step === 'result',
+      isNotReady: s.step === 'result' && s.mode === 'notready', isReady: s.step === 'result' && s.mode === 'ready',
+      qNum: s.q + 1, qTotal: qs.length, qText: cur.q,
+      progressPct: Math.round(100 * s.q / qs.length) + '%',
+      opts: cur.opts.map((label, i) => ({ label, pick: pick(i) })),
+      start: () => this.setState({ step: 'q', q: 0 }),
+      goBack: () => { if (s.q === 0) this.setState({ step: 'intro' }); else this.setState({ q: s.q - 1 }); },
+      restart: () => this.setState({ step: 'intro', q: 0, mode: 'notready' }),
+      setReady: () => this.setState({ mode: 'ready' }),
+      setNotReady: () => this.setState({ mode: 'notready' }),
+      exitTitle: c.gate ? c.gate.title : '', exitBody: c.gate ? c.gate.body : '', exitAlt: c.gate ? c.gate.alt : '',
+      nrHeadline: c.nrHeadline, nrPoints: c.nrPoints, nrAlt: c.nrAlt,
+      rHeadline: c.rHeadline, rDims: c.rDims, rService: c.rService, rServiceBody: c.rServiceBody
+    };
+  }
+}
+</script>
+</body>
+</html>

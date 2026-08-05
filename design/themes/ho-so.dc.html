@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600&amp;family=Public+Sans:wght@400;600;700&amp;display=swap">
+  <style>
+    body { margin:0; background:#e8e7e2; color:#262319; font-family:'Public Sans',sans-serif; }
+    a { color:#224185; } a:hover { color:#162C5B; }
+  </style>
+</helmet>
+<div style="padding:40px; display:flex; flex-direction:column; gap:28px;">
+  <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+    <a href="index.dc.html" style="font-size:13px;">← Themes</a>
+    <h1 style="margin:0; font-family:Literata,serif; font-weight:600; font-size:30px;">Theme 2 · Hồ sơ — the dossier</h1>
+    <span style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; background:#E8EDF7; color:#224185; padding:3px 10px;">New direction</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1200px;">
+    <div style="background:#fff; border:1px solid #D9D3C4; padding:20px; display:flex; flex-direction:column; gap:10px;">
+      <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:#8A8577;">Organising principle</div>
+      <div style="font-size:14px; line-height:1.55;"><strong>The paper file itself.</strong> Every screen is a page in a dossier: index tabs, document numbers, margin rules, and a verification stamp. The product AIMMI sells is a file that survives examination — the site looks like that file.</div>
+      <div style="font-size:13px; line-height:1.55; color:#6b665a;"><strong>Type:</strong> Literata (titles and memo text — a serif designed for screens, full Vietnamese) over Public Sans (labels, UI, figures). The serif carries the document's authority; the sans does the administration.<br><strong>Signature:</strong> the result as a stamped verification memo.<br><strong>Risk:</strong> can tip into old-fashioned or legalistic; the generous white page and brand-navy stamp keep it current.</div>
+      <div style="font-size:12px; color:#8A8577; line-height:1.5;">vs banned direction 1 (cream + serif display + terracotta): ground is near-white paper, not cream; the display duty sits with stamped sans labels, not the serif; accent is the brand navy, not terracotta.</div>
+    </div>
+    <div style="background:#fff; border:1px solid #D9D3C4; padding:20px; display:flex; flex-direction:column; gap:10px;">
+      <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:#8A8577;">Palette</div>
+      <div style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
+        <div style="display:flex; gap:10px; align-items:center;"><span style="width:36px; height:20px; background:#FCFBF7; border:1px solid #D9D3C4;"></span>Paper · #FCFBF7 — ground</div>
+        <div style="display:flex; gap:10px; align-items:center;"><span style="width:36px; height:20px; background:#FFFFFF; border:1px solid #D9D3C4;"></span>Page · #FFFFFF — sheets</div>
+        <div style="display:flex; gap:10px; align-items:center;"><span style="width:36px; height:20px; background:#262319;"></span>Ink · #262319 — text</div>
+        <div style="display:flex; gap:10px; align-items:center;"><span style="width:36px; height:20px; background:#D9D3C4;"></span>Folder · #D9D3C4 — rules, edges</div>
+        <div style="display:flex; gap:10px; align-items:center;"><span style="width:36px; height:20px; background:#224185;"></span>Stamp green · #224185 — actions, verification</div>
+        <div style="display:flex; gap:10px; align-items:center;"><span style="width:36px; height:20px; background:#8A8577;"></span>Pencil · #8A8577 — annotations</div>
+        <div style="display:flex; gap:10px; align-items:center;"><span style="width:36px; height:20px; background:#EB8123;"></span>Brand orange · #EB8123 — gap marks (deep step #B25F12 at small sizes)</div>
+      </div>
+    </div>
+    <div style="background:#fff; border:1px solid #D9D3C4; padding:20px; display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:#8A8577;">Diacritic test — every weight used</div>
+      <div style="font-family:Literata,serif; font-weight:600; font-size:22px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ — Đánh giá hồ sơ</div>
+      <div style="font-family:Literata,serif; font-weight:400; font-size:16px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ — Nguồn tiền có vượt qua thẩm định?</div>
+      <div style="font-weight:700; font-size:14px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ — ĐÁNH GIÁ HỒ SƠ</div>
+      <div style="font-weight:600; font-size:14px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ — Đánh giá hồ sơ</div>
+      <div style="font-weight:400; font-size:14px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ — Đánh giá hồ sơ</div>
+      <div style="font-size:12px; color:#8A8577;">Literata and Public Sans both ship full Vietnamese subsets. Mockup loads Google Fonts; production self-hosts (doc 02 constraint).</div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:12px; color:#666;">Home — 375px</div>
+      <div style="width:375px; background:#FCFBF7; box-shadow:0 4px 20px rgba(38,35,25,.14); display:flex; flex-direction:column;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:2px solid #262319; background:#FCFBF7;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          <img src="logo.png" alt="AIMMI" style="height:24px; display:block;">
+          <span style="font-size:12px;"><strong>VI</strong> · EN</span>
+        </div>
+        <div style="padding:26px 20px 6px; display:flex; flex-direction:column; gap:12px;">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#8A8577;">AIMMI · Chuẩn bị hồ sơ · Trang 01</div>
+          <h2 style="margin:0; font-family:Literata,serif; font-weight:600; font-size:29px; line-height:1.22;">Your business file will be examined before you are.</h2>
+          <p style="margin:0; font-size:14px; line-height:1.6; color:#4a4639;">We tell you whether it will hold — ownership evidence, source of wealth, outbound compliance, prepared in Vietnam against Vietnamese documents.</p>
+        </div>
+        <div style="padding:16px 20px 22px;">
+          <div style="background:#fff; border:1px solid #D9D3C4; border-left:4px solid #224185; padding:16px; display:flex; flex-direction:column; gap:10px;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#224185;">Câu 1 / 8 · Is your file ready?</div>
+            <div style="font-family:Literata,serif; font-weight:600; font-size:18px; line-height:1.3;">How much capital could you deploy, with documents behind it?</div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">Under 5 tỷ VND</button>
+              <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">5–10 tỷ VND</button>
+              <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">10–25 tỷ VND</button>
+              <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">Over 25 tỷ VND</button>
+            </div>
+            <div style="font-size:11px; color:#8A8577;">Answers stay in your browser.</div>
+          </div>
+        </div>
+        <div style="padding:6px 20px 24px; display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:baseline; gap:8px; border-bottom:1px solid #D9D3C4; padding-bottom:6px;"><span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#8A8577;">Mục 02</span><span style="font-family:Literata,serif; font-weight:600; font-size:17px;">Destinations</span></div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="background:#fff; border:1px solid #D9D3C4; padding:12px 14px; display:flex; justify-content:space-between; align-items:baseline;"><span style="font-family:Literata,serif; font-weight:600; font-size:15px;">Canada</span><span style="font-size:11px; color:#8A8577;">Hồ sơ C-01</span></div>
+            <div style="background:#fff; border:1px solid #D9D3C4; padding:12px 14px; display:flex; justify-content:space-between; align-items:baseline;"><span style="font-family:Literata,serif; font-weight:600; font-size:15px;">United States — EB-5</span><span style="font-size:11px; color:#8A8577;">Hồ sơ U-01</span></div>
+          </div>
+          <button style="padding:12px; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; background:#224185; color:#fff; border:none; cursor:pointer; font-family:inherit;">Compare the destinations</button>
+        </div>
+        <div style="padding:4px 20px 28px; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:baseline; gap:8px; border-bottom:1px solid #D9D3C4; padding-bottom:6px;"><span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#8A8577;">Mục 04</span><span style="font-family:Literata,serif; font-weight:600; font-size:17px;">What AIMMI does not do</span></div>
+          <div style="font-size:13px; line-height:1.65; color:#4a4639;">We do not represent you before immigration authorities. We do not guarantee outcomes. We do not take payment for introductions.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:12px; color:#666;">Home — 1280px</div>
+      <div style="width:1280px; background:#FCFBF7; box-shadow:0 4px 20px rgba(38,35,25,.14); display:flex; flex-direction:column;">
+        <div style="display:flex; align-items:center; gap:28px; padding:16px 48px; border-bottom:2px solid #262319;">
+          <img src="logo.png" alt="AIMMI" style="height:26px; display:block; margin-right:16px;">
+          <span style="font-size:13px; font-weight:600;">Assessments</span><span style="font-size:13px; color:#6b665a;">Destinations</span><span style="font-size:13px; color:#6b665a;">Services</span><span style="font-size:13px; color:#6b665a;">Knowledge</span><span style="font-size:13px; color:#6b665a;">About</span>
+          <span style="margin-left:auto; font-size:13px;"><strong>VI</strong> · EN</span>
+        </div>
+        <div style="display:grid; grid-template-columns:7fr 5fr; gap:64px; padding:56px 48px 40px; align-items:start;">
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#8A8577;">AIMMI · Chuẩn bị hồ sơ doanh nghiệp · Trang 01</div>
+            <h2 style="margin:0; font-family:Literata,serif; font-weight:600; font-size:52px; line-height:1.16; max-width:16ch;">Your business file will be examined before you are.</h2>
+            <p style="margin:0; font-size:16px; line-height:1.65; color:#4a4639; max-width:54ch;">We tell you whether it will hold. Ownership evidence, source of wealth, outbound investment compliance — prepared in Vietnam, against Vietnamese documents, for whichever destination your representative recommends.</p>
+            <div style="display:flex; gap:12px;">
+              <button style="padding:13px 22px; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; background:#224185; color:#fff; border:none; cursor:pointer; font-family:inherit;">Check your file — free</button>
+              <button style="padding:13px 22px; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; background:transparent; color:#224185; border:1px solid #224185; cursor:pointer; font-family:inherit;">The five services</button>
+            </div>
+          </div>
+          <div style="position:relative; margin-top:8px;">
+            <div style="position:absolute; top:-14px; left:24px; background:#E8EDF7; color:#224185; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; padding:4px 12px;">Phiếu 01 · Tự đánh giá</div>
+            <div style="background:#fff; border:1px solid #D9D3C4; border-left:4px solid #224185; padding:24px 20px 20px; display:flex; flex-direction:column; gap:12px;">
+              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#224185;">Câu 1 / 8 · Is your file ready?</div>
+              <div style="font-family:Literata,serif; font-weight:600; font-size:20px; line-height:1.3;">How much capital could you deploy, with documents behind it?</div>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">Under 5 tỷ VND</button>
+                <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">5–10 tỷ VND</button>
+                <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">10–25 tỷ VND</button>
+                <button style="padding:11px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">Over 25 tỷ VND</button>
+              </div>
+              <div style="font-size:11px; color:#8A8577;">Answers stay in your browser. Nothing is sent to a server.</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:16px 48px 56px; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; align-items:baseline; gap:8px; border-bottom:1px solid #D9D3C4; padding-bottom:8px;"><span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#8A8577;">Mục 02</span><span style="font-family:Literata,serif; font-weight:600; font-size:22px;">What AIMMI produces</span></div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+            <div style="background:#fff; border:1px solid #D9D3C4; padding:10px 10px 14px; display:flex; flex-direction:column; gap:10px;"><img src="photo.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05);"><div style="font-size:12px; color:#6b665a;">A reconciliation memo — the gaps named before an assessor finds them.</div></div>
+            <div style="background:#fff; border:1px solid #D9D3C4; padding:10px 10px 14px; display:flex; flex-direction:column; gap:10px;"><div style="aspect-ratio:4/3; background:#F1EFE8; display:flex; align-items:center; justify-content:center; font-size:12px; color:#8A8577;">[PHOTO — net worth statement]</div><div style="font-size:12px; color:#6b665a;">A documented net worth statement, traced per asset.</div></div>
+            <div style="background:#fff; border:1px solid #D9D3C4; padding:10px 10px 14px; display:flex; flex-direction:column; gap:10px;"><div style="aspect-ratio:4/3; background:#F1EFE8; display:flex; align-items:center; justify-content:center; font-size:12px; color:#8A8577;">[PHOTO — document index]</div><div style="font-size:12px; color:#6b665a;">The document index a representative receives.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:12px; color:#666;">Destination comparison — 1280px</div>
+      <div style="width:1280px; background:#FCFBF7; box-shadow:0 4px 20px rgba(38,35,25,.14); padding:48px;">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#8A8577;">Điểm đến · Bảng so sánh</div>
+        <h2 style="margin:10px 0 6px; font-family:Literata,serif; font-weight:600; font-size:36px;">An honest comparison</h2>
+        <p style="margin:0 0 24px; font-size:15px; color:#4a4639; max-width:64ch;">The destinations are not ranked. Which one fits is a decision for you and a licensed representative.</p>
+        <div style="background:#fff; border:1px solid #D9D3C4;">
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead><tr>
+              <th style="text-align:left; padding:12px 18px; border-bottom:2px solid #262319; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; width:22%;">Criterion</th>
+              <th style="text-align:left; padding:12px 18px; border-bottom:2px solid #262319; font-family:Literata,serif; font-size:16px;">Canada</th>
+              <th style="text-align:left; padding:12px 18px; border-bottom:2px solid #262319; font-family:Literata,serif; font-size:16px;">United States — EB-5</th>
+              <th style="text-align:left; padding:12px 18px; border-bottom:2px solid #262319; font-family:Literata,serif; font-size:16px;">Panama</th>
+            </tr></thead>
+            <tbody>
+              <tr><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:#8A8577;">Capital required</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0; font-variant-numeric:tabular-nums;">[RANGE — VERIFY]</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">[RANGE — VERIFY]</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">[RANGE — VERIFY]</td></tr>
+              <tr><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:#8A8577;">Active operating role</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">Required — passive investment is banned in every stream</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">None required</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">None required</td></tr>
+              <tr><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:#8A8577;">Realistic timeline</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">[TIMELINE — VERIFY]</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">[TIMELINE — VERIFY]</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">[TIMELINE — VERIFY]</td></tr>
+              <tr><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:#8A8577;">Who regulates it</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">IRCC + provincial programmes</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">USCIS · SEC oversight</td><td style="padding:12px 18px; border-bottom:1px solid #EDEAE0;">[AUTHORITY — VERIFY]</td></tr>
+              <tr><td style="padding:12px 18px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:#8A8577;">If the programme closes</td><td style="padding:12px 18px;">The same evidence transfers to another stream</td><td style="padding:12px 18px;">Reauthorised periodically</td><td style="padding:12px 18px;">[VERIFY]</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:16px 0 0; font-size:13px; color:#6b665a;"><strong>Disclosure.</strong> US and Panama services are delivered with INGWE Global, a commercial partner. AIMMI receives no fee for any introduction.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:12px; color:#666;">Assessment question — 375px</div>
+      <div style="width:375px; background:#FCFBF7; box-shadow:0 4px 20px rgba(38,35,25,.14); padding:20px; display:flex; flex-direction:column; gap:16px; min-height:560px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;"><span style="font-size:13px; color:#224185;">← Back</span><span style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:#8A8577;">Câu 3 / 8</span></div>
+        <div style="display:flex; gap:5px;">
+          <span style="flex:1; height:4px; background:#224185;"></span><span style="flex:1; height:4px; background:#224185;"></span><span style="flex:1; height:4px; background:#224185;"></span>
+          <span style="flex:1; height:4px; background:#E4E0D3;"></span><span style="flex:1; height:4px; background:#E4E0D3;"></span><span style="flex:1; height:4px; background:#E4E0D3;"></span><span style="flex:1; height:4px; background:#E4E0D3;"></span><span style="flex:1; height:4px; background:#E4E0D3;"></span>
+        </div>
+        <div style="background:#fff; border:1px solid #D9D3C4; padding:20px 18px; display:flex; flex-direction:column; gap:12px; flex:1;">
+          <div style="font-family:Literata,serif; font-weight:600; font-size:21px; line-height:1.3;">How many years of business ownership can you document?</div>
+          <div style="font-size:13px; color:#8A8577; line-height:1.5;">From the registration certificate — not the year the company was founded.</div>
+          <div style="display:flex; flex-direction:column; gap:9px;">
+            <button style="padding:12px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">None</button>
+            <button style="padding:12px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">1–2 years</button>
+            <button style="padding:12px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">3–5 years</button>
+            <button style="padding:12px 14px; font-size:14px; text-align:left; background:#FCFBF7; border:1px solid #D9D3C4; color:#262319; cursor:pointer; font-family:inherit;">More than 5 years</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:12px; color:#666;">Assessment result, ready — 375px · the signature element</div>
+      <div style="width:375px; background:#FCFBF7; box-shadow:0 4px 20px rgba(38,35,25,.14); padding:16px; display:flex; flex-direction:column; gap:14px;">
+        <div style="background:#fff; border:1px solid #D9D3C4; padding:0; position:relative;">
+          <div style="border-bottom:2px solid #262319; padding:16px 18px 12px; display:flex; flex-direction:column; gap:4px;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#8A8577;">Phiếu kiểm tra hồ sơ · AIMMI/HS-01 · [DATE]</div>
+            <div style="font-family:Literata,serif; font-weight:600; font-size:22px; line-height:1.25;">Prepared for active business routes</div>
+          </div>
+          <div style="position:absolute; top:10px; right:12px; transform:rotate(7deg); border:2.5px solid #224185; color:#224185; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; padding:6px 12px; opacity:0.9;">Sẵn sàng</div>
+          <div style="padding:16px 18px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px dotted #D9D3C4; padding-bottom:8px;"><span style="font-size:13px;">Capital documentation</span><span style="font-size:12px; font-weight:700; color:#224185;">✓ Đầy đủ</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px dotted #D9D3C4; padding-bottom:8px;"><span style="font-size:13px;">Business evidence</span><span style="font-size:12px; font-weight:700; color:#224185;">✓ Đầy đủ</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px dotted #D9D3C4; padding-bottom:8px;"><span style="font-size:13px;">Personal documentation</span><span style="font-size:12px; font-weight:700; color:#B25F12;">◐ Thiếu</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:13px;">Outbound compliance</span><span style="font-size:12px; font-weight:700; color:#B25F12;">○ Chưa bắt đầu</span></div>
+          </div>
+          <div style="border-top:1px solid #D9D3C4; padding:14px 18px; font-family:Literata,serif; font-size:14px; line-height:1.6; color:#4a4639;">Files with your profile are most often prepared for active business routes. A licensed representative determines what you are eligible for.</div>
+        </div>
+        <div style="background:#E8EDF7; border:1px solid #224185; padding:16px 18px; display:flex; flex-direction:column; gap:8px;">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; color:#224185;">Closes the gap</div>
+          <div style="font-family:Literata,serif; font-weight:600; font-size:16px;">Business readiness assessment (paid)</div>
+          <div style="font-size:13px; line-height:1.55; color:#2c3f66;">Maps each gap above to a fix, a cost and a timeline. Fee range: [FEE RANGE]</div>
+          <button style="padding:12px; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; background:#224185; color:#fff; border:none; cursor:pointer; font-family:inherit;">Talk to AIMMI</button>
+        </div>
+        <div style="font-size:11px; color:#8A8577; line-height:1.5;">Verified [DATE] · [DISCLAIMER] · Readiness is what AIMMI assesses; eligibility is determined by a licensed representative.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

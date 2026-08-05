@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIMMI — diacritic type test (Theme 4 faces)</title>
+<!-- Phase C deliverable (doc 02 §C5). Kept for future font changes.
+     Mockup convenience: Google Fonts. PRODUCTION SELF-HOSTS (doc 04 §3).
+     Pass condition: every row renders ế ữ ỗ ằ ợ ặ ậ ườ ễ in the named face
+     and weight with no substitute-font fallback (check tone-mark position
+     and stroke weight match the base glyphs). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+  body { margin:0; background:#FBFAF6; color:#2A2C33; font-family:'Public Sans',sans-serif; padding:48px; }
+  h1 { font-family:Literata,serif; font-weight:600; font-size:30px; margin:0 0 8px; }
+  p.note { color:#54544E; font-size:14px; line-height:1.6; max-width:70ch; margin:0 0 32px; }
+  table { border-collapse:collapse; width:100%; max-width:1100px; background:#fff; border:1px solid #E3DFD2; border-radius:12px; overflow:hidden; }
+  th { text-align:left; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#224185; background:#E8EDF7; padding:12px 18px; }
+  td { padding:14px 18px; border-top:1px solid #EFECE3; vertical-align:baseline; }
+  td.meta { font-size:12px; color:#8A8577; white-space:nowrap; }
+  .l4 { font-family:Literata,serif; font-weight:400; }
+  .l6 { font-family:Literata,serif; font-weight:600; }
+  .p4 { font-weight:400; } .p6 { font-weight:600; } .p7 { font-weight:700; }
+</style>
+</head>
+<body>
+<h1>Diacritic test — Literata &amp; Public Sans</h1>
+<p class="note">Test string: <strong>ế ữ ỗ ằ ợ ặ ậ ườ ễ</strong>, plus live copy at real sizes. A face that fails at any used weight is disqualified regardless of how it looks in English (doc 02 §B5). Numbers in the last column check tabular figures: 1 234 567,89 ₫.</p>
+<table>
+  <tr><th>Face · weight · size</th><th>Test string</th><th>Live copy</th><th>Figures</th></tr>
+  <tr><td class="meta">Literata 600 · 54px</td><td class="l6" style="font-size:54px; line-height:1.2;">ế ữ ỗ ằ ợ ặ ậ ườ ễ</td><td class="l6" style="font-size:54px; line-height:1.2;">Hồ sơ sẵn sàng</td><td class="l6" style="font-size:34px; font-variant-numeric:tabular-nums;">20 tỷ</td></tr>
+  <tr><td class="meta">Literata 600 · 22px</td><td class="l6" style="font-size:22px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ</td><td class="l6" style="font-size:22px;">Nguồn tiền có vượt qua thẩm định?</td><td class="l6" style="font-size:22px; font-variant-numeric:tabular-nums;">9 / 12</td></tr>
+  <tr><td class="meta">Literata 400 · 16px</td><td class="l4" style="font-size:16px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ</td><td class="l4" style="font-size:16px;">Sự chuẩn bị là điều AIMMI đánh giá; điều kiện do đại diện được cấp phép quyết định.</td><td class="l4" style="font-size:16px; font-variant-numeric:tabular-nums;">1 234 567,89 ₫</td></tr>
+  <tr><td class="meta">Public Sans 700 · 11px caps</td><td class="p7" style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">ế ữ ỗ ằ ợ ặ ậ ườ ễ</td><td class="p7" style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">Phiếu kiểm tra hồ sơ · Cùng bạn vươn xa</td><td class="p7" style="font-size:11px; font-variant-numeric:tabular-nums;">01 · 08</td></tr>
+  <tr><td class="meta">Public Sans 600 · 14px</td><td class="p6" style="font-size:14px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ</td><td class="p6" style="font-size:14px;">Kiểm tra hồ sơ của bạn — miễn phí</td><td class="p6" style="font-size:14px; font-variant-numeric:tabular-nums;">400–800</td></tr>
+  <tr><td class="meta">Public Sans 400 · 14px</td><td class="p4" style="font-size:14px;">ế ữ ỗ ằ ợ ặ ậ ườ ễ</td><td class="p4" style="font-size:14px;">Câu trả lời của bạn không rời khỏi trình duyệt. Không có gì được gửi lên máy chủ.</td><td class="p4" style="font-size:14px; font-variant-numeric:tabular-nums;">15–20%</td></tr>
+</table>
+</body>
+</html>

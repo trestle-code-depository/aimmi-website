@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600&amp;family=Public+Sans:wght@400;600;700&amp;family=IBM+Plex+Sans:wght@400;600;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Barlow:wght@400;600&amp;family=Barlow+Condensed:wght@500;600&amp;display=swap">
+  <style>
+    body { margin:0; background:#ececec; color:#222; font-family:system-ui,-apple-system,sans-serif; }
+    a { color:#3b6ea5; } a:hover { color:#2a5580; }
+  </style>
+</helmet>
+<div style="max-width:1240px; margin:0 auto; padding:48px 24px 96px; display:flex; flex-direction:column; gap:32px;">
+  <header style="display:flex; flex-direction:column; gap:8px;">
+    <div style="font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#777;">AIMMI rebuild — Phase B</div>
+    <img src="logo-tagline.png" alt="AIMMI — Cùng bạn vươn xa" style="height:88px; align-self:flex-start; margin-bottom:8px;">
+    <h1 style="margin:0; font-size:32px; font-weight:600;">Four themes</h1>
+    <p style="margin:0; color:#555; max-width:70ch; line-height:1.5;">✔ Chosen: <a href="ho-so-mo.dc.html" style="font-weight:600;">Theme 4 — the open dossier</a> (signed off). The Phase C handover package lives in <code>design/</code>. Three organising principles, not three palettes. Each is applied to the same four screens — home (both widths), destination comparison, assessment question, assessment result. The result screen is the signature element in all three; everything around it stays quiet. <a href="../wireframes/index.dc.html">← Wireframes</a></p>
+  </header>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+
+    <a href="ban-ve.dc.html" style="text-decoration:none; color:inherit; background:#f2f2f3; border:1px solid #aaa; display:flex; flex-direction:column;">
+      <div style="padding:20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#224185; font-weight:600;">Theme 1</span><span style="font-size:11px; color:#777;">Industry design system</span></div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:30px; text-transform:uppercase; color:#1d1f20; line-height:1.05;">Bản vẽ<br>the drawing</div>
+        <div style="font-family:Barlow,sans-serif; font-size:13px; line-height:1.55; color:#444;">The file as a technical drawing under inspection. Registration-marked frames, navy duotone photography, the result as an inspection plate.</div>
+        <div style="display:flex; gap:4px;">
+          <span style="flex:1; height:22px; background:#f2f2f3; border:1px solid #ccc;"></span><span style="flex:1; height:22px; background:#1d1f20;"></span><span style="flex:1; height:22px; background:#224185;"></span><span style="flex:1; height:22px; background:#EB8123;"></span>
+        </div>
+        <div style="border:1px solid #999; position:relative; padding:12px; margin-top:4px;">
+          <span style="position:absolute; top:-5px; left:-5px; color:#666; font-size:9px;">+</span><span style="position:absolute; top:-5px; right:-5px; color:#666; font-size:9px;">+</span><span style="position:absolute; bottom:-5px; left:-5px; color:#666; font-size:9px;">+</span><span style="position:absolute; bottom:-5px; right:-5px; color:#666; font-size:9px;">+</span>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:16px; text-transform:uppercase; color:#1d1f20;">Prepared for active business routes</div>
+          <div style="font-family:Barlow,sans-serif; font-size:11px; color:#666;">Signature: the inspection plate on the steel-900 field</div>
+        </div>
+        <div style="font-size:12px; color:#777; line-height:1.5; margin-top:auto;"><strong>Risk:</strong> technical coolness may read impersonal to a 40–60 audience.</div>
+      </div>
+      <div style="padding:12px 20px; border-top:1px solid #aaa; font-size:13px; color:#3b6ea5; font-weight:600;">Full walkthrough →</div>
+    </a>
+
+    <a href="ho-so.dc.html" style="text-decoration:none; color:inherit; background:#FCFBF7; border:1px solid #aaa; display:flex; flex-direction:column;">
+      <div style="padding:20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#224185; font-weight:700;">Theme 2</span><span style="font-size:11px; color:#8A8577;">New direction</span></div>
+        <div style="font-family:Literata,serif; font-weight:600; font-size:28px; color:#262319; line-height:1.15;">Hồ sơ<br>the dossier</div>
+        <div style="font-family:'Public Sans',sans-serif; font-size:13px; line-height:1.55; color:#4a4639;">The paper file itself. Every screen is a page in a dossier: index tabs, document numbers, margin rules — and a verification stamp on the result.</div>
+        <div style="display:flex; gap:4px;">
+          <span style="flex:1; height:22px; background:#FCFBF7; border:1px solid #D9D3C4;"></span><span style="flex:1; height:22px; background:#262319;"></span><span style="flex:1; height:22px; background:#D9D3C4;"></span><span style="flex:1; height:22px; background:#224185;"></span>
+        </div>
+        <div style="background:#fff; border:1px solid #D9D3C4; padding:12px; position:relative; margin-top:4px;">
+          <div style="position:absolute; top:6px; right:8px; transform:rotate(7deg); border:2px solid #224185; color:#224185; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; padding:3px 7px;">Sẵn sàng</div>
+          <div style="font-family:Literata,serif; font-weight:600; font-size:15px; color:#262319; max-width:68%;">Prepared for active business routes</div>
+          <div style="font-family:'Public Sans',sans-serif; font-size:11px; color:#8A8577;">Signature: the stamped verification memo</div>
+        </div>
+        <div style="font-size:12px; color:#8A8577; line-height:1.5; margin-top:auto;"><strong>Risk:</strong> can tip into old-fashioned or legalistic if the page loses its air.</div>
+      </div>
+      <div style="padding:12px 20px; border-top:1px solid #aaa; font-size:13px; color:#224185; font-weight:600;">Full walkthrough →</div>
+    </a>
+
+    <a href="con-so.dc.html" style="text-decoration:none; color:inherit; background:#F3F5F6; border:1px solid #aaa; display:flex; flex-direction:column;">
+      <div style="padding:20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#224185; font-weight:700;">Theme 3</span><span style="font-size:11px; color:#5b6a75;">New direction</span></div>
+        <div style="font-family:'IBM Plex Sans',sans-serif; font-weight:700; font-size:28px; color:#17242E; line-height:1.15; letter-spacing:-0.01em;">Con số<br>the number</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; line-height:1.55; color:#3d4a54;">The figure. Ruled ledger rows, code columns, tabular numerals — the native format of an audience that reads financial statements.</div>
+        <div style="display:flex; gap:4px;">
+          <span style="flex:1; height:22px; background:#F3F5F6; border:1px solid #D5DBDF;"></span><span style="flex:1; height:22px; background:#172A54;"></span><span style="flex:1; height:22px; background:#224185;"></span><span style="flex:1; height:22px; background:#EB8123;"></span>
+        </div>
+        <div style="background:#172A54; padding:12px; margin-top:4px; display:flex; flex-direction:column; gap:4px;">
+          <div style="display:flex; align-items:baseline; gap:5px;"><span style="font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:26px; color:#EB8123; line-height:1;">9</span><span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8fa3b0;">/ 12</span></div>
+          <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#c8d3da;">Signature: the metered figure — coverage as the headline</div>
+        </div>
+        <div style="font-size:12px; color:#5b6a75; line-height:1.5; margin-top:auto;"><strong>Risk:</strong> austerity — can read as an internal tool without the photography rows.</div>
+      </div>
+      <div style="padding:12px 20px; border-top:1px solid #aaa; font-size:13px; color:#224185; font-weight:600;">Full walkthrough →</div>
+    </a>
+
+    <a href="ho-so-mo.dc.html" style="text-decoration:none; color:inherit; background:#FBFAF6; border:2px solid #224185; display:flex; flex-direction:column;">
+      <div style="padding:20px; display:flex; flex-direction:column; gap:12px; flex:1;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#224185; font-weight:700;">Theme 4</span><span style="font-size:11px; color:#8A8577;">Theme 2, risk mitigated</span></div>
+        <div style="font-family:Literata,serif; font-weight:600; font-size:28px; color:#2A2C33; line-height:1.15;">Hồ sơ mở<br>the open dossier</div>
+        <div style="font-family:'Public Sans',sans-serif; font-size:13px; line-height:1.55; color:#4a4a45;">The dossier held open: same document grammar, warmed — sentence-case serif, soft corners, the logo's orange dots as the human mark, real photography.</div>
+        <div style="display:flex; gap:4px;">
+          <span style="flex:1; height:22px; border-radius:4px; background:#FBFAF6; border:1px solid #E3DFD2;"></span><span style="flex:1; height:22px; border-radius:4px; background:#2A2C33;"></span><span style="flex:1; height:22px; border-radius:4px; background:#224185;"></span><span style="flex:1; height:22px; border-radius:4px; background:#EB8123;"></span>
+        </div>
+        <div style="background:#fff; border:1px solid #E3DFD2; border-radius:8px; padding:12px; position:relative; margin-top:4px;">
+          <div style="position:absolute; top:8px; right:8px; width:40px; height:40px; border:2px solid #224185; border-radius:50%; transform:rotate(8deg); display:flex; flex-direction:column; align-items:center; justify-content:center; background:#fff;"><span style="width:4px; height:4px; border-radius:50%; background:#EB8123;"></span><span style="font-size:6px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:#224185; text-align:center; line-height:1.2;">Sẵn<br>sàng</span></div>
+          <div style="font-family:Literata,serif; font-weight:600; font-size:15px; color:#2A2C33; max-width:65%;">Prepared for active business routes</div>
+          <div style="font-family:'Public Sans',sans-serif; font-size:11px; color:#8A8577;">Signature: the seal with the dot motif</div>
+        </div>
+        <div style="font-size:12px; color:#8A8577; line-height:1.5; margin-top:auto;"><strong>Residual risk:</strong> softening too far — the rules, numbers and stamp are load-bearing.</div>
+      </div>
+      <div style="padding:12px 20px; border-top:2px solid #224185; font-size:13px; color:#224185; font-weight:600;">Full walkthrough →</div>
+    </a>
+  </div>
+
+  <section style="display:flex; flex-direction:column; gap:10px; max-width:900px;">
+    <h2 style="margin:0; font-size:18px;">Shared, in all three</h2>
+    <ul style="margin:0; padding-left:20px; color:#333; line-height:1.6; font-size:14px;">
+      <li>Brand applied in all three: AIMMI navy #224185 carries the accent role, the logo’s orange #EB8123 marks gaps and dots, and the logotype replaces the set text brand in every header.</li>
+      <li>The assessment result is the one bold moment; everything around it stays quiet.</li>
+      <li>Tabular numerals wherever numbers appear in sequence; no gradients; no flag palette; body contrast ≥ 4.5:1.</li>
+      <li>Diacritic test string shown per theme at every weight used — all six families ship full Vietnamese subsets.</li>
+      <li>Mockups load Google Fonts for speed of comparison; production self-hosts all fonts (doc 02 constraint). The Industry theme's fonts already ship with the design system.</li>
+      <li>None of the three matches the banned default directions of doc 02 §B3; where one comes near, the walkthrough notes what was changed.</li>
+    </ul>
+  </section>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* AIMMI — design tokens, Theme 4 "Hồ sơ mở" (the open dossier)
+   Phase C handover · signed off by Tony · final for build (doc 03 §8)
+   Fonts: Literata + Public Sans, SELF-HOSTED — a CDN font call is a
+   cross-border transfer (doc 04 §3). Vendor the woff2 files into the repo
+   (Vietnamese subset included) before first paint.
+   Rules baked into this theme: no gradients; no red-and-white flag palette;
+   tabular numerals wherever numbers appear in sequence; the assessment
+   result is the one bold moment. */
+
+:root {
+  /* -------- color: brand -------- */
+  --color-navy: #224185;        /* brand navy — actions, links, the stamp */
+  --color-navy-700: #162C5B;    /* hover / pressed, small accent text */
+  --color-navy-900: #0C1834;    /* deepest step, rare */
+  --color-navy-tint: #E8EDF7;   /* panels, table header bands */
+  --color-navy-text-soft: #C9D4EA; /* secondary text on navy fields */
+  --color-orange: #EB8123;      /* the dots — progress, gap marks, list marks */
+  --color-orange-deep: #B25F12; /* orange at small-text sizes (4.5:1 on paper) */
+
+  /* -------- color: ground & ink -------- */
+  --color-paper: #FBFAF6;       /* page ground */
+  --color-page: #FFFFFF;        /* sheets, cards */
+  --color-ink: #2A2C33;         /* body text */
+  --color-ink-soft: #54544E;    /* secondary body text */
+  --color-pencil: #8A8577;      /* annotations, meta, labels */
+  --color-line: #E3DFD2;        /* card borders, rules */
+  --color-line-soft: #EFECE3;   /* internal row rules */
+
+  /* -------- type -------- */
+  --font-display: 'Literata', Georgia, serif;      /* headings, memo text — sentence case */
+  --font-ui: 'Public Sans', system-ui, sans-serif; /* body, labels, UI, figures */
+  --font-weight-display: 600;
+  --text-display-xl: 54px;  /* home hero, desktop */
+  --text-display-lg: 38px;  /* page titles, desktop */
+  --text-display-md: 30px;  /* home hero, mobile */
+  --text-display-sm: 22px;  /* card/memo titles */
+  --text-question: 21px;    /* assessment question */
+  --text-body-lg: 16px;
+  --text-body: 14px;
+  --text-body-sm: 13px;
+  --text-meta: 11px;        /* meta, lastVerified */
+  --text-label: 10px;       /* uppercase furniture labels, 0.12em tracking, 700 */
+  --leading-display: 1.25;
+  --leading-body: 1.65;
+  --tracking-label: 0.12em;
+  /* numbers in sequence: font-variant-numeric: tabular-nums */
+
+  /* -------- space (4px base) -------- */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-12: 48px; --space-16: 64px;
+  --edge-mobile: 20px; --edge-desktop: 48px;
+  --measure: 54ch;
+
+  /* -------- shape -------- */
+  --radius-sm: 6px;   /* small controls */
+  --radius-md: 8px;   /* buttons, option rows, cards */
+  --radius-lg: 12px;  /* memo panels, tables */
+  --radius-pill: 999px; /* tags, the "Phiếu" badge */
+
+  /* -------- elevation -------- */
+  --shadow-card: 0 1px 4px rgba(42, 44, 51, 0.05);
+  --shadow-raised: 0 4px 20px rgba(42, 44, 51, 0.12);
+
+  /* -------- signature elements -------- */
+  --dot-size: 8px;          /* the orange dot motif */
+  --seal-border: 2.5px solid var(--color-navy); /* the circular result seal, rotate(8deg) */
+  --nav-rule: 2px solid var(--color-ink);       /* the one hard rule, under the nav only */
+}
+
+/* -------- interaction states (never browser defaults) -------- */
+/*
+  a               { color: var(--color-navy); }
+  a:hover         { color: var(--color-navy-700); }
+  button.primary  { background: var(--color-navy); color: #fff; }
+  button.primary:hover  { background: var(--color-navy-700); }
+  button.option:hover   { border-color: var(--color-navy); background: var(--color-navy-tint); }
+  :focus-visible  { outline: 2px solid var(--color-navy); outline-offset: 2px; }
+  ::selection     { background: var(--color-navy-tint); }
+  [disabled]      { opacity: 0.45; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none; transition: none; } }
+*/
